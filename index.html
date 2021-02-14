@@ -2,16 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <button id=btn onclick="makeAll()">Show</button>
-    <div id="main">
+    <div id="container">
+        <div v-for="i in items" class=cont>
+                <div v-for="q, item of (Object.keys(i), i)" v-on:click="show=!show">{{ item }} : {{ q }} </div>
+        </div>
+        <div v-if="show">123</div>
     </div>
-    <div id="modal"></div>
     <script src="script.js"></script>
 </body>
 </html>
